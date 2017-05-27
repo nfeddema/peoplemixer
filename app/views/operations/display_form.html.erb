@@ -2,6 +2,8 @@
 	<%= form_tag operations_calculate_path, :method => 'post' do %>
 		<p><%= label_tag :maximum_persons_per_group %>: <%= text_field_tag :maximum_persons_per_group %></p>
 		<p><%= label_tag :number_of_rounds %>: <%= text_field_tag :number_of_rounds %></p>
+		<p><%= label_tag :times_to_run %>: <%= text_field_tag :times_to_run %></p>
+		<p>(Average times to run is about 700.  If the app times out try a lower number)</p>
 
 		<% (1..@number_of_persons).each do |n| %>
 			<p><%= label_tag "Person #{n}" %>: <%= text_field_tag 'persons[]' %></p>
