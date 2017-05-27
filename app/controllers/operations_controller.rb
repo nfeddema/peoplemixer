@@ -71,7 +71,7 @@ class OperationsController < ApplicationController
 
     def write_new_file dataset
       File.open(Rails.root + "lib/schedule.txt", "w") do |f|     
-        f.write(dataset.print_to_string)
+        f.write(raw(dataset.print_to_string))
       end
     end
 end

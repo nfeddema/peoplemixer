@@ -387,9 +387,9 @@ class ScheduleDatasetWrapper
     end
     @schedule_datasets = []
 
-    (1..1000).each do |i|
+    (1..750).each do |i|
       @schedule_datasets.push(ScheduleDataset.new(:seminarians_per_group => @seminarians_per_group, :number_of_rounds => @number_of_rounds, :seminarian_list => @seminarian_list))
-      puts "...working...#{i}"
+      #puts "...working...#{i}"
     end
 
     #Remove results that didn't achieve optimal quantity of duplicates
