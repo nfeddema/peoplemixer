@@ -332,7 +332,7 @@ class ScheduleDataset
   # Display Methods
 
   def print_to_string
-    output = ''
+    output = ""
     output << "Maximum persons per group: #{seminarians_per_group}\n"
     output << "Number of rounds: #{number_of_rounds}"
 
