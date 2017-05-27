@@ -389,7 +389,7 @@ class ScheduleDatasetWrapper
 
     (1..1500).each do |i|
       @schedule_datasets.push(ScheduleDataset.new(:seminarians_per_group => @seminarians_per_group, :number_of_rounds => @number_of_rounds, :seminarian_list => @seminarian_list))
-      #puts "...working...#{i}"
+      puts "...working...#{i}"
     end
 
     #Remove results that didn't achieve optimal quantity of duplicates
@@ -399,11 +399,12 @@ class ScheduleDatasetWrapper
     evenly_distributed = @schedule_datasets.select{|ds| ds.smallest_group_size >= ((ds.seminarians.count / ds.number_of_groups.to_f).floor)}
     @schedule_datasets = evenly_distributed if evenly_distributed.any?
     
+    optimum_dataset = best_dataset
     # Printing options
-    best_dataset.print_groups
-    #best_dataset.print_success
-    #puts "\nBest Score: #{best_dataset.score}"
-    #puts "#{@schedule_datasets.count} Datasets Found"
+    #optimum_dataset.print_groups
+    #optimum_dataset.print_success
+    puts "\nBest Score: #{optimum_dataset.score}"
+    puts "#{@schedule_datasets.count} Datasets Found"
   end
 
   #Find the least number of duplicate days in a wrapper
