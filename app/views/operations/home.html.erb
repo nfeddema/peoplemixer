@@ -1,0 +1,11 @@
+<h1 class="center">Welcome to Mixer</h1>
+<div class="text">
+	<p class="center">This is an application that takes a group of people and mixes them together into small groups, trying
+	to create as many unique groups as possible.  There are three basic goals: 1) try to pair all persons once or twice, 
+	but no more than twice; 2) try to assign each person to every section throughout many rounds; and 3) try to make every
+	group approximately the same size.</p>
+	<p class="center">The application tries to find an optimal mixture 1500 times and then chooses the best out of these
+	1500 options.  Depending on the size of the initial group, this means that the program can take some time to run.  
+	Please be patient.</p>
+</div>
+<div class="wrapper"><%= link_to "Begin", operations_set_quantity_path, :class => 'button' %></div>

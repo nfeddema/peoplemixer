@@ -1,0 +1,28 @@
+<h3 class="center">The mix has the following statistics:</h3>
+<p class="center">
+	Number of times a pair of persons were never in the same group: <%= @schedule_dataset.number_of_zeros %><br />
+	Number of times a pair of persons were in the same group once: <%= @schedule_dataset.number_of_singles %><br />
+	Number of times a pair of persons were in the same group twice: <%= @schedule_dataset.number_of_doubles %><br />
+	Number of times a pair of persons were in the same group three times: <%= @schedule_dataset.number_of_triples %><br />
+	Number of times a pair of persons were in the same group four times or more: <%= @schedule_dataset.number_of_quad_plus %><br /><br/>
+	<%= link_to "Click here to download text file of results", operations_download_file_path %><br />
+</p>
+
+<% (1..@schedule_dataset.number_of_rounds).each do |n| %>
+	<table border="1">
+		<caption>Round <%= n %></caption>
+		<tr>
+			<% (1..@schedule_dataset.number_of_groups).each do |i| %>
+				<th>Section <%= i %></th>
+			<% end %>
+		</tr>
+		
+		<% (1..@schedule_dataset.seminarians_per_group).each do |i| %>
+			<tr>
+			<% @groups.select{|g| g.position == n}.sort_by{|g| g.day}.each do |group| %>
+				<td><%= group.seminarians[i-1].try(:name) %></td>
+			<% end %>
+			</tr>
+		<% end %>
+	</table>
+<% end %>
