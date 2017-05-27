@@ -387,7 +387,7 @@ class ScheduleDatasetWrapper
     end
     @schedule_datasets = []
 
-    (1..1500).each do |i|
+    (1..1000).each do |i|
       @schedule_datasets.push(ScheduleDataset.new(:seminarians_per_group => @seminarians_per_group, :number_of_rounds => @number_of_rounds, :seminarian_list => @seminarian_list))
       puts "...working...#{i}"
     end
