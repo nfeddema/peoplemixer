@@ -389,7 +389,7 @@ class ScheduleDatasetWrapper
 
     (1..@times_to_run).each do |i|
       @schedule_datasets.push(ScheduleDataset.new(:seminarians_per_group => @seminarians_per_group, :number_of_rounds => @number_of_rounds, :seminarian_list => @seminarian_list))
-      puts "...working...#{i}"
+      #puts "...working...#{i}"
     end
 
     #Remove results that didn't achieve optimal quantity of duplicates
@@ -417,8 +417,8 @@ class ScheduleDatasetWrapper
   end
 
   def best_dataset
-    smallest = 9000
-    winning_dataset = nil
+    smallest = @schedule_datasets.first.score
+    winning_dataset = @schedule_datasets.first
     @schedule_datasets.each do |ds|
       if ds.score < smallest
         smallest = ds.score 

@@ -2,8 +2,6 @@ require "#{Rails.root}/lib/code/schedule.rb"
 
 class OperationsController < ApplicationController
 
-  rescue_from Timeout::Error, :with => :rescue_from_timeout
-
   def home
   end
 
@@ -43,12 +41,6 @@ class OperationsController < ApplicationController
 
   def download_file
     send_file(Rails.root + "tmp/schedule.txt")
-  end
-
-  def rescue_from_timeout exception
-    @number_of_persons = params[:persons].count if params[:persons]
-    flash.now[:error] = 'The application timed out.  Try entering a smaller value for "Times to run"'
-    render "display_form"
   end
 
   private

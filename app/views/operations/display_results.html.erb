@@ -5,7 +5,7 @@
 	Number of times a pair of persons were in the same group twice: <%= @schedule_dataset.number_of_doubles %><br />
 	Number of times a pair of persons were in the same group three times: <%= @schedule_dataset.number_of_triples %><br />
 	Number of times a pair of persons were in the same group four times or more: <%= @schedule_dataset.number_of_quad_plus %><br /><br/>
-	<%= link_to "Click here to download text file of results", operations_download_file_path %><br />
+	<% #link_to "Click here to download text file of results", operations_download_file_path %>
 </p>
 
 <% (1..@schedule_dataset.number_of_rounds).each do |n| %>
