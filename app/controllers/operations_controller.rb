@@ -29,7 +29,7 @@ class OperationsController < ApplicationController
     	@schedule_dataset = dsw.best_dataset
     	@groups = @schedule_dataset.groups.sort_by{|g| [g.position, g.day]}
 
-      write_new_file @schedule_dataset
+      #write_new_file @schedule_dataset
 
     	render "display_results"
 
