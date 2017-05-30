@@ -326,7 +326,7 @@ class ScheduleDataset
 
   #Score for Dataset
   def score
-    return number_of_triples + (number_of_zeros*2) + (number_of_quad_plus*3)
+    return number_of_zeros + (number_of_triples*3) + (number_of_quad_plus*4)
   end
 
   # Display Methods
